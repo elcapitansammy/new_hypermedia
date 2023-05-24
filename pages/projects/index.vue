@@ -5,7 +5,7 @@
     </div>
 
     <v-row>
-      <v-col cols="3" sm="1" md="4" v-for="(p, index) in template" :key="index">
+      <v-col cols="3" sm="1" md="4" v-for="(p, index) in data" :key="index">
         <Project_card :project="p" />
       </v-col>
     </v-row>
@@ -13,38 +13,8 @@
 </template>
 
 <script setup>
-const template = [
-  {
-    title: "Project1",
-    description: "short description goes here",
-    image: "https://picsum.photos/600/600",
-  },
-  {
-    title: "Project2",
-    description: "short description goes here",
-    image: "https://picsum.photos/600/600",
-  },
-  {
-    title: "Project3",
-    description: "short description goes here",
-    image: "https://picsum.photos/600/600",
-  },
-  {
-    title: "Project4",
-    description: "short description goes here",
-    image: "https://picsum.photos/600/600",
-  },
-  {
-    title: "Project5",
-    description: "short description goes here",
-    image: "https://picsum.photos/600/600",
-  },
-  {
-    title: "Project6",
-    description: "short description goes here",
-    image: "https://picsum.photos/600/600",
-  },
-];
+let data = await $fetch("/server/getprojects");
+console.log(data);
 
 //the code below prevents the page from loading correctly - from vinh to sam
 // let data = await $fetch("/server/getprojects");

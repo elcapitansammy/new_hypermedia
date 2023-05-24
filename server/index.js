@@ -36,14 +36,19 @@ async function initDB(){
         }
     })
     await Projects.sync({force: true})
-    Projects.create({
-        name: "AI", 
-        shortDescription: "This is a short description", 
-        longDescription:"this is a way longer description that uses the text datatypes", 
-        image:"./random/path",
-        personId: "1"
+    const projectValues = [
+        {
+          name: "Resolving world Hunger", 
+          shortDescription: "This is a short description"
+        },
+        {
+            name: "Machine learning to cure cancer", 
+            shortDescription: "This is a short description for the second time"
+        }
 
-    })
+    ]
+
+    await Projects.bulkCreate(projectValues);  
 
    
    
@@ -63,12 +68,22 @@ async function initDB(){
         }
     })
     await People.sync({force: true})
-    People.create({
-        name: "Jhon mayer", 
-        Description: "This is a short description for a person", 
+    const peopleValues = [
+    {
+        name: "Sam Gentili", 
+        Description: "Greatest person on earth", 
         image:"./random/path", 
-        email: "youoiok@gmail.com"
-    })
+        email: "exampel@gmail.com"
+    },
+    {
+        name: "John", 
+        Description: "meh not that good", 
+        image:"./random/path", 
+        email: "dfsdqdl@gmail.com"
+    }]
+    await People.bulkCreate(peopleValues); 
+
+    
 
     
     
@@ -83,31 +98,51 @@ async function initDB(){
         }
     })
     await Area.sync({force: true})
-    Area.create({
+    const areaValues = [{
         name: "Medicine", 
         description: "this is where you write the definition of medicine"
-    })
+    },
+    {
+        name: "Nature", 
+        description: "What is the nature"
+    }]
+    await Area.bulkCreate(areaValues); 
+
+    const tables = [Projects, People, Area];
+    return tables
 }
 
 
 
 async function initServer(){
-    const model = await initDB() 
+    const models = await initDB() 
 
     app.get('/', async(req, res) => {
         res.send("Hello world");
     })
 
     app.get('/getprojects', async(req, res) => {
-        const data= await model.Projects.findAll()
-        res.status(200).json(data);
-        console.log(json(data)); 
+        const data= await models[0].findAll()
+        res.json(data);
+        console.log(data);
     })
 
-    app.listen(3000, () =>{
-        console.log("listening on port 3000")
+    app.get('/getareas', async(req, res) => {
+        const data= await models[2].findAll()
+        res.json(data);
+        console.log(data);
+    })
+
+    app.get('/getpeople', async(req, res) => {
+        const data= await models[1].findAll()
+        res.json(data);
+        console.log(data);
+    })
+
+    app.listen(3001, () =>{
+        console.log("listening on port 3001")
     })
 
 }
 export default fromNodeMiddleware(app)
-initServer(); 
+initServer();

@@ -11,7 +11,7 @@
       ></v-img>
   
       <v-card-title>
-        {{project.title}}
+        {{project.name}}
       </v-card-title>
   
       <v-card-subtitle>
@@ -39,7 +39,7 @@
           <v-divider></v-divider>
   
           <v-card-text>
-            {{project.description}}
+            {{project.shortDescription}}
           </v-card-text>
         </div>
       </v-expand-transition>
