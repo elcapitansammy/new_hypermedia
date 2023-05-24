@@ -3,11 +3,11 @@
     <v-img :src="category.image" height="200px" cover></v-img>
 
     <v-card-title>
-      {{ category.title }}
+      {{ category.name}}
     </v-card-title>
 
     <v-card-subtitle>
-      {{ category.sector }}
+      here is a subtitle
     </v-card-subtitle>
 
     <v-card-actions>

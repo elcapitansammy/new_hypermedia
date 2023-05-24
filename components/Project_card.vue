@@ -5,7 +5,7 @@
       color="#f0e9e9"
     >
       <v-img
-        :src= "project.image"
+        src = "https://i.postimg.cc/fL4tT1SN/Esempi-pratici-di-Machine-learning.png"
         height="200px"
         cover
       ></v-img>
@@ -15,7 +15,7 @@
       </v-card-title>
   
       <v-card-subtitle>
-        Subtitle
+        {{project.image}}
       </v-card-subtitle>
   
       <v-card-actions>

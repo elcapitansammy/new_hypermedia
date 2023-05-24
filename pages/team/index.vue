@@ -5,7 +5,7 @@
     </div>
 
     <v-row>
-      <v-col cols="3" sm="1" md="4" v-for="(p, index) in persons" :key="index">
+      <v-col cols="3" sm="1" md="4" v-for="(p, index) in data" :key="index">
         <Person_card :person="p" />
       </v-col>
     </v-row>
@@ -13,14 +13,8 @@
 </template>
 
 <script setup>
-const persons = [
-  { name: "Jo", surname: "Smith", description: "fdsjakf" },
-  { name: "John", surname: "Smith", description: "fdsjakf" },
-  { name: "J", surname: "Smith", description: "fdsjakf" },
-  { name: "J", surname: "Smith", description: "fdsjakf" },
-  { name: "J", surname: "Smith", description: "fdsjakf" },
-  { name: "J", surname: "Smith", description: "fdsjakf" },
-];
+let data = await $fetch("/server/getpeople");
+console.log(data);
 </script>
 
 <style scoped></style>

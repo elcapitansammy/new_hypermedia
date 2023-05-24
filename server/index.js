@@ -39,11 +39,13 @@ async function initDB(){
     const projectValues = [
         {
           name: "Resolving world Hunger", 
-          shortDescription: "This is a short description"
+          shortDescription: "This is a short description", 
+          image: "https://i.postimg.cc/fL4tT1SN/Esempi-pratici-di-Machine-learning.png"
         },
         {
             name: "Machine learning to cure cancer", 
-            shortDescription: "This is a short description for the second time"
+            shortDescription: "This is a short description for the second time",
+            image: "https://i.postimg.cc/fL4tT1SN/Esempi-pratici-di-Machine-learning.png"
         }
 
     ]

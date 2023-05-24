@@ -4,7 +4,7 @@
       <h1 class="text-3xl font-bold mb-4">All categories</h1>
     </div>
     <v-row>
-      <v-col cols="3" sm="1" md="4" v-for="(a, index) in category" :key="index">
+      <v-col cols="3" sm="1" md="4" v-for="(a, index) in data" :key="index">
         <Category_card :category="a" />
       </v-col>
     </v-row>
@@ -12,6 +12,8 @@
 </template>
 
 <script setup>
+let data = await $fetch("/server/getareas");
+console.log(data);
 const category = [
   {
     title: "Category1",
