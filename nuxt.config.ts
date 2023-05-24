@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         // @ts-ignore
         config.plugins.push(vuetify())
       );
-    },
+    },'@nuxtjs/supabase'
   ],
 
   app: {
@@ -108,4 +108,11 @@ export default defineNuxtConfig({
       description: description,
     },
   },
+  serverHandlers: [
+    {
+      route: '/server', 
+      handler: '~/server/index.js', 
+      middleware: true
+    }
+  ]
 });

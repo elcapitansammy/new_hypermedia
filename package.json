@@ -1,5 +1,6 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -12,11 +13,21 @@
     "@iconify/vue": "^4.1.1",
     "@kevinmarrec/nuxt-pwa": "^0.17.0",
     "@nuxtjs/google-fonts": "^3.0.0",
+    "@nuxtjs/supabase": "^0.3.5",
     "nuxt": "3.4.2",
     "sass": "^1.62.0",
     "vuetify": "^3.1.15"
   },
   "dependencies": {
+    "express": "^4.18.2",
+    "sequelize": "^6.31.1",
+    "sqlite3": "^5.1.6",
     "vite-plugin-vuetify": "^1.0.2"
-  }
+  },
+  "name": "new_hypermedia",
+  "description": "![Starter Image](/public/starter.png)\r Nuxt 3 is now stable. Vuetify 3 is now stable. I will be updating this template as we go along. Feel free to open an issue if you have any questions or suggestions.\r This template here will get you up & running with adding the two together :)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
