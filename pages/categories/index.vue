@@ -1,0 +1,37 @@
+<template>
+  <div class="pb-15">
+    <div class="p-4">
+      <h1 class="text-3xl font-bold mb-4">All categories</h1>
+    </div>
+    <v-row>
+      <v-col cols="3" sm="1" md="4" v-for="(a, index) in category" :key="index">
+        <Category_card :category="a" />
+      </v-col>
+    </v-row>
+  </div>
+</template>
+
+<script setup>
+const category = [
+  {
+    title: "Category1",
+    sector: "Health Care",
+    description: "Short description goes here.",
+    image: "https://picsum.photos/600/600",
+  },
+  {
+    title: "Category2",
+    sector: "Health Care",
+    description: "Short description goes here.",
+    image: "https://picsum.photos/600/600",
+  },
+  {
+    title: "Category3",
+    sector: "Finance",
+    description: "Short description goes here.",
+    image: "https://picsum.photos/600/600",
+  },
+];
+</script>
+
+<style scoped></style>
