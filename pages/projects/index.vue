@@ -45,8 +45,10 @@ const template = [
     image: "https://picsum.photos/600/600",
   },
 ];
-let data = await $fetch("/server/getprojects");
-console.log(data);
+
+//the code below prevents the page from loading correctly - from vinh to sam
+// let data = await $fetch("/server/getprojects");
+// console.log(data);
 </script>
 
 <style scoped></style>
