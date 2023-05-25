@@ -1,6 +1,7 @@
 <template>
   <div>
-    <p>Project id: {{ id }}</p>
+    <!-- <p>Project title: {{ project.name }}</p> -->
+    <p>We are here</p>
   </div>
 </template>
 
