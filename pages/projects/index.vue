@@ -7,7 +7,7 @@
     <v-row>
       <v-col cols="3" sm="1" md="4" v-for="(p, index) in data" :key="index">
         <Project_card :project="p" />
-        <v-btn><Nuxtlink :to="`/projects/${p.id}`">Button</Nuxtlink></v-btn>
+        <!-- <v-btn><Nuxtlink :to="`/projects/${p.id}`">Button</Nuxtlink></v-btn> -->
       </v-col>
     </v-row>
 
