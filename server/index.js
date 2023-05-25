@@ -46,6 +46,36 @@ async function initDB(){
             name: "Machine learning to cure cancer", 
             shortDescription: "This is a short description for the second time",
             image: "https://picsum.photos/600/600"
+        }, 
+        {
+          name: "GreenTech Solutions", 
+          shortDescription: "Developing sustainable technology solutions to reduce carbon emissions and promote environmental conservation", 
+          image: "https://i.postimg.cc/fL4tT1SN/Esempi-pratici-di-Machine-learning.png"
+        },
+        {
+            name: "HealthTrack", 
+            shortDescription: "Building a mobile application that allows users to track and monitor their health metrics, including exercise, diet, and vital signs.",
+            image: "https://picsum.photos/600/600"
+        },
+        {
+          name: "SmartHome Automation", 
+          shortDescription: "Creating a system that integrates various smart devices in a home to automate tasks, enhance security, and improve energy efficiency.", 
+          image: "https://i.postimg.cc/fL4tT1SN/Esempi-pratici-di-Machine-learning.png"
+        },
+        {
+            name: "EduLearn", 
+            shortDescription: " Developing an online learning platform that offers interactive courses and personalized learning experiences for students of all ages",
+            image: "https://picsum.photos/600/600"
+        },
+        {
+          name: "FoodShare", 
+          shortDescription: "Building a mobile app that connects individuals and organizations to share excess food, reducing food waste and addressing hunger issues.", 
+          image: "https://i.postimg.cc/fL4tT1SN/Esempi-pratici-di-Machine-learning.png"
+        },
+        {
+            name: "RoboGuard", 
+            shortDescription: "Designing an autonomous security robot equipped with advanced sensors and AI capabilities to enhance surveillance and protect premises.",
+            image: "https://picsum.photos/600/600"
         }
 
     ]
@@ -143,13 +173,14 @@ async function initServer(){
 
     app.get('/getprojects/:parameter', async (req, res) => {
         const parameter = req.params.parameter; // Access the parameter value
-        const data = await models[1].findAll({
+        const data = await models[0].findAll({
         where: {
             id: parameter // Filter based on the ID value
         }
         })
 
         res.json(data);
+        console.log(data)
     })
 
     app.listen(3001, () =>{
