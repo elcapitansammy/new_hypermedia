@@ -45,7 +45,7 @@ async function initDB(){
         {
             name: "Machine learning to cure cancer", 
             shortDescription: "This is a short description for the second time",
-            image: "https://i.postimg.cc/fL4tT1SN/Esempi-pratici-di-Machine-learning.png"
+            image: "https://picsum.photos/600/600"
         }
 
     ]
@@ -139,6 +139,17 @@ async function initServer(){
         const data= await models[1].findAll()
         res.json(data);
         console.log(data);
+    })
+
+    app.get('/getprojects/:parameter', async (req, res) => {
+        const parameter = req.params.parameter; // Access the parameter value
+        const data = await models[1].findAll({
+        where: {
+            id: parameter // Filter based on the ID value
+        }
+        })
+
+        res.json(data);
     })
 
     app.listen(3001, () =>{
