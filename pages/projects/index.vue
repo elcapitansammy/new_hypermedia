@@ -10,16 +10,16 @@
         <v-btn><Nuxtlink :to="`/projects/${p.id}`">Button</Nuxtlink></v-btn>
       </v-col>
     </v-row>
+
+    {{ test }}
   </div>
 </template>
 
 <script setup>
 let data = await $fetch("/server/getprojects");
-console.log(data);
+console.log("projects data", data);
 
-//the code below prevents the page from loading correctly - from vinh to sam
-// let data = await $fetch("/server/getprojects");
-// console.log(data);
+let test = await $fetch("/server/getprojects/1");
 </script>
 
 <style scoped></style>

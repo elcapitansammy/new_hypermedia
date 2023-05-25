@@ -8,33 +8,38 @@ export default defineNuxtConfig({
   typescript: { shim: false },
   build: { transpile: ["vuetify"] },
   modules: [
-    '@nuxtjs/tailwindcss',
+    "@nuxtjs/tailwindcss",
     "@kevinmarrec/nuxt-pwa",
     async (options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) =>
         // @ts-ignore
         config.plugins.push(vuetify())
       );
-    },'@nuxtjs/supabase'
+    },
+    "@nuxtjs/supabase",
   ],
 
   app: {
     head: {
       title: "Hypermedia",
       meta: [
-        {name : "description", content: "Project for Hypermedia course at Politecnico di Milano"},
+        { name: "description", content: "Project for Hypermedia course at Politecnico di Milano" },
       ],
       link: [
         { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
+        {
+          rel: "stylesheet",
+          href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css",
+        },
         // { rel: "preconnect", href: "https://rsms.me/" },
       ],
     },
   },
   serverHandlers: [
     {
-      route: '/server', 
-      handler: '~/server/index.js', 
-      middleware: true
-    }
-  ]
+      route: "/server",
+      handler: "~/server/index.js",
+      middleware: true,
+    },
+  ],
 });

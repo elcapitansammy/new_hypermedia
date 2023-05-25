@@ -8,7 +8,7 @@ export default {
 
 <template>
   <v-card>
-    <v-tabs v-model="tab" color="#11769e" align-tabs="center">
+    <v-tabs v-model="tab" color="#203C8A" align-tabs="center">
       <NuxtLink to="/"><v-tab>Home</v-tab></NuxtLink>
       <NuxtLink to="/categories"><v-tab>Categories</v-tab></NuxtLink>
       <NuxtLink to="/projects"><v-tab>Projects</v-tab></NuxtLink>
