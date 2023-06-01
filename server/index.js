@@ -15,7 +15,6 @@ const db = new Sequelize({
   storage: path.join(__dirname, "DB.sqlite"),
 });
 
-<<<<<<< Updated upstream
 async function initDB(){
     await db.authenticate()
     const Projects = db.define('projects', {
@@ -82,63 +81,6 @@ async function initDB(){
     ]
 
     await Projects.bulkCreate(projectValues);  
-
-   
-   
-    const People = db.define('people', {
-        name:{
-            type: DataTypes.STRING, 
-            allowNull: false
-        },
-        Description:{
-            type: DataTypes.STRING, 
-        },
-        image:{
-            type: DataTypes.STRING, 
-        }, 
-        email:{
-            type: DataTypes.STRING, 
-        }
-    })
-    await People.sync({force: true})
-    const peopleValues = [
-=======
-async function initDB() {
-  await db.authenticate();
-  const Projects = db.define("projects", {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    shortDescription: {
-      type: DataTypes.STRING,
-    },
-    longDescription: {
-      type: DataTypes.TEXT,
-    },
-    image: {
-      type: DataTypes.STRING,
-    },
-    personId: {
-      type: DataTypes.INTEGER,
-    },
-  });
-  await Projects.sync({ force: true });
-  const projectValues = [
->>>>>>> Stashed changes
-    {
-      name: "Resolving world Hunger",
-      shortDescription: "This is a short description",
-      image: "https://i.postimg.cc/fL4tT1SN/Esempi-pratici-di-Machine-learning.png",
-    },
-    {
-      name: "Machine learning to cure cancer",
-      shortDescription: "This is a short description for the second time",
-      image: "https://picsum.photos/600/600",
-    },
-  ];
-
-  await Projects.bulkCreate(projectValues);
 
   const People = db.define("people", {
     name: {
@@ -231,33 +173,7 @@ async function initServer() {
         id: parameter, // Filter based on the ID value
       },
     });
-
-<<<<<<< Updated upstream
-    app.get('/getpeople', async(req, res) => {
-        const data= await models[1].findAll()
-        res.json(data);
-        console.log(data);
-    })
-
-    app.get('/getprojects/:parameter', async (req, res) => {
-        const parameter = req.params.parameter; // Access the parameter value
-        const data = await models[0].findAll({
-        where: {
-            id: parameter // Filter based on the ID value
-        }
-        })
-
-        res.json(data);
-        console.log(data)
-    })
-
-    app.listen(3001, () =>{
-        console.log("listening on port 3001")
-    })
-=======
-    res.json(data);
-  });
->>>>>>> Stashed changes
+  })
 
   app.listen(3001, () => {
     console.log("listening on port 3001");

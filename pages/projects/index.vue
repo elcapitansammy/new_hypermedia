@@ -7,10 +7,12 @@
     <v-row>
       <v-col cols="3" sm="1" md="4" v-for="(p, index) in data" :key="index">
         <Project_card :project="p" />
-        <!-- <v-btn><Nuxtlink :to="`/projects/${p.id}`">Button</Nuxtlink></v-btn> -->
+        <v-btn><NuxtLink :to="{
+            path: `/projects/${p.id}`,
+            query: { projects: JSON.stringify(data), id:p.id }
+          }">button</NuxtLink></v-btn>
       </v-col>
     </v-row>
-
     {{ test }}
   </div>
 </template>
@@ -18,8 +20,5 @@
 <script setup>
 let data = await $fetch("/server/getprojects");
 console.log("projects data", data);
-
-let test = await $fetch("/server/getprojects/1");
 </script>
-
 <style scoped></style>
