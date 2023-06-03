@@ -1,7 +1,7 @@
 <template>
   <div class="pb-15">
     <div class="p-4">
-      <h1 class="text-3xl font-bold mb-4">Our team</h1>
+      <v-card-title class="text-h6 text-md-h5 text-lg-h4">Our team</v-card-title>
     </div>
 
     <v-row>

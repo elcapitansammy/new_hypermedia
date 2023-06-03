@@ -1,7 +1,7 @@
 <template>
   <div class="pb-15">
     <div class="p-4">
-      <h1 class="text-3xl font-bold mb-4">All categories</h1>
+      <v-card-title class="text-h6 text-md-h5 text-lg-h4">All categories</v-card-title>
     </div>
     <v-row>
       <v-col cols="3" sm="1" md="4" v-for="(a, index) in data" :key="index">

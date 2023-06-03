@@ -27,17 +27,17 @@
 
     <div class="p-4">
       <v-row>
-        <v-col pl="8">
+        <v-col cols="11" pl="8">
           <v-btn icon="mdi-arrow-left"><NuxtLink :to="`/projects/${prev}`">Prev</NuxtLink></v-btn>
         </v-col>
-        <v-col pr="8" align-self="end">
+        <v-col pr="8">
           <v-btn icon="mdi-arrow-right"><NuxtLink :to="`/projects/${next}`">Next</NuxtLink></v-btn>
         </v-col>
       </v-row>
     </div>
 
     <div class="p-8">
-      <h3 class="text-xl font-bold mb-4">Related categories</h3>
+      <v-card-title class="text-h6 text-md-h5 text-lg-h4" id="new"> {{ single[0].name }}</v-card-title>
     </div>
 
     <!-- <div calss="pb-15">

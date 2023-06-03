@@ -1,7 +1,7 @@
 <template>
     <div class="pb-15 justify-center">
         <div class="p-4">
-            <h1 class="text-6xl font-bold mb-4">Newsletter</h1>
+            <v-card-title class="text-h6 text-md-h5 text-lg-h4">Newsletter</v-card-title>
         </div>
 
         <div class="d-flex justify-center items-center">
